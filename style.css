@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 .hero {
-  background-image: url('imagem/EU\ AMO\ PITANGA.jpeg'); /* <-- coloque aqui a nova imagem */
+  background-image: url('fundo-imagem/EU\ AMO\ PITANGA.jpeg'); 
   background-size: cover;
   background-position: center;
   color: white;
