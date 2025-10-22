@@ -5,6 +5,128 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  <title>Pitanga Viva</title>
  <link rel="stylesheet" href="style.css" />
+ <style>
+   body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+     background: url("fundo.jpg") center/cover no-repeat fixed;
+   }
+
+   header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: white;
+     padding: 10px 40px;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   }
+
+   .logo {
+     display: flex;
+     align-items: center;
+   }
+
+   .logo img {
+     height: 40px;
+     margin-right: 10px;
+   }
+
+   .logo h1 {
+     color: #2e7d32;
+     font-size: 22px;
+     font-weight: 900;
+   }
+
+   nav ul {
+     display: flex;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+   }
+
+   nav li {
+     margin-left: 20px;
+   }
+
+   nav a {
+     text-decoration: none;
+     color: black;
+     font-weight: bold;
+   }
+
+   nav a:hover {
+     color: #2e7d32;
+   }
+
+   .hero {
+     height: 70vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     position: relative;
+     text-align: center;
+   }
+
+   .overlay {
+     background-color: rgba(0, 0, 0, 0.5);
+     padding: 30px;
+     border-radius: 10px;
+   }
+
+   .overlay h2 {
+     font-size: 2em;
+     font-weight: bold;
+     margin-bottom: 20px;
+   }
+
+   .buttons .btn {
+     display: inline-block;
+     margin: 10px;
+     padding: 12px 25px;
+     border-radius: 5px;
+     text-decoration: none;
+     color: white;
+     font-weight: bold;
+   }
+
+   .btn-green {
+     background-color: #2e7d32;
+   }
+
+   .btn-blue {
+     background-color: #0277bd;
+   }
+
+   .content {
+     text-align: center;
+     padding: 60px 20px;
+     background-color: rgba(255, 255, 255, 0.9);
+     margin: 20px;
+     border-radius: 10px;
+   }
+
+   h3 {
+     font-size: 28px;
+     color: #004d40;
+     margin-bottom: 20px;
+   }
+
+   p {
+     font-size: 18px;
+     margin: 10px auto;
+     max-width: 700px;
+     color: #333;
+   }
+
+   section {
+     display: none;
+   }
+
+   section.active {
+     display: block;
+   }
+ </style>
 </head>
 <body>
  <header>
@@ -14,54 +136,56 @@
    </div>
    <nav>
      <ul>
-       <li><a href="#">Início</a></li>
-       <li><u href="#problemas">Problemas</u></li>
-       <li><u href="#solucoes">Soluções</u></li>
-       <li><u href="#rentabilidade">Rentabilidade</u></li>
-       <li><u href="#Concorrentes">Concorrentes</u></li>
+       <li><a href="#" onclick="mostrarPagina('inicio')">Início</a></li>
+       <li><a href="#" onclick="mostrarPagina('problemas')">Problemas</a></li>
+       <li><a href="#" onclick="mostrarPagina('solucoes')">Soluções</a></li>
+       <li><a href="#" onclick="mostrarPagina('rentabilidade')">Rentabilidade</a></li>
+       <li><a href="#">Concorrentes</a></li>
      </ul>
    </nav>
  </header>
 
- <!-- Seção principal -->
- <section class="hero">
+ <!-- INÍCIO -->
+ <section id="inicio" class="hero active">
    <div class="overlay">
      <h2>Vamos transformar nossos espaços públicos em locais de convivência, lazer e bem-estar.</h2>
      <div class="buttons">
-       <a href="#problemas" class="btn btn-green">Ver Problemas</a>
-       <a href="#solucoes" class="btn btn-blue">Sugira uma Solução</a>
+       <a href="#" class="btn btn-green" onclick="mostrarPagina('problemas')">Ver Problemas</a>
+       <a href="#" class="btn btn-blue" onclick="mostrarPagina('solucoes')">Sugira uma Solução</a>
      </div>
    </div>
  </section>
 
- <!-- Seção de introdução -->
- <section class="content">
-   <h3>Desafios da Nossa Cidade</h3>
- </section>
-
- <!-- Seção de Problemas -->
+ <!-- PROBLEMAS -->
  <section id="problemas" class="content">
-   <h3>Problemas Identificados</h3>
-   <p> <strong>Falta de manutenção:</strong> Muitos espaços públicos estão abandonados e precisam de cuidados constantes.</p>
-   <p> <strong>Brinquedos danificados:</strong> Parquinhos infantis e áreas de lazer estão quebrados, trazendo riscos às crianças.</p>
-   <p> <strong>Iluminação precária:</strong> A falta de luz adequada deixa os espaços inseguros durante a noite.</p>
-   <p> <strong>Poucos espaços de lazer:</strong> Há poucas áreas destinadas ao convívio e lazer da comunidade.</p>
+   <h3>Problemas Encontrados</h3>
+   <p> <strong>Falta de manutenção:</strong> muitos espaços públicos estão abandonados e precisam de cuidados constantes.</p>
+   <p> <strong>Brinquedos danificados:</strong> áreas infantis estão quebradas e oferecem riscos às crianças.</p>
+   <p> <strong>Iluminação precária:</strong> a falta de luz reduz a segurança durante a noite.</p>
+   <p> <strong>Poucos espaços de lazer:</strong> há poucas áreas disponíveis para convivência e lazer.</p>
  </section>
 
- <!-- Seção de Soluções -->
+ <!-- SOLUÇÕES -->
  <section id="solucoes" class="content">
    <h3>Soluções Propostas</h3>
-   <p> <strong>Revitalizações completas:</strong> Reforma e modernização dos espaços públicos, tornando-os seguros e agradáveis.</p>
-   <p> <strong>Eventos culturais:</strong> Realização de apresentações, feiras e atividades que promovam o uso dos espaços.</p>
-   <p> <strong>Programa “Adote uma Praça”:</strong> Incentivar empresas e moradores a cuidar e manter praças e parques.</p>
+   <p> <strong>Revitalizações completas:</strong> reformas e melhorias em praças e parques.</p>
+   <p> <strong>Eventos culturais:</strong> promover atividades que estimulem o uso dos espaços públicos.</p>
+   <p> <strong>Programa "Adote uma Praça":</strong> incentivo a empresas e moradores para cuidar das áreas públicas.</p>
  </section>
 
- <!-- Seção de Rentabilidade -->
+ <!-- RENTABILIDADE -->
  <section id="rentabilidade" class="content">
-   <h3>Rentabilidade e Parcerias</h3>
-   <p> <strong>Parcerias com empresas locais:</strong> Incentivar comércios e empresários a investir na revitalização dos espaços.</p>
-   <p> <strong>Participação da comunidade:</strong> Pessoas dispostas a colaborar com doações, apoio financeiro ou voluntário.</p>
+   <h3>Rentabilidade</h3>
+   <p> <strong>Parcerias com empresas locais:</strong> incentivo a negócios que queiram investir nos espaços públicos.</p>
+   <p> <strong>Colaboração comunitária:</strong> moradores dispostos a participar de programas de melhoria urbana.</p>
  </section>
 
+ <script>
+   function mostrarPagina(id) {
+     document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+     document.getElementById(id).classList.add("active");
+     window.scrollTo({ top: 0, behavior: "smooth" });
+   }
+ </script>
 </body>
 </html>
